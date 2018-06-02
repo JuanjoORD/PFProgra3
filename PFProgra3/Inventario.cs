@@ -16,5 +16,12 @@ namespace PFProgra3
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Administrador admin = new Administrador();
+            admin.Show();
+            this.Hide();
+        }
     }
 }

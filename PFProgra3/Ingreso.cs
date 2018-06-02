@@ -64,12 +64,14 @@ namespace PFProgra3
                         if (user[x].Tipousuario == "Administrador")
                         {
                             Administrador ad = new Administrador();
+                            ad.lNombreAdmin.Text = user[x].Nombre + " " + user[x].Apellido;
                             ad.Show();
                             this.Hide();
                         }
                         else if (user[x].Tipousuario == "Vendedor")
                         {
                             Vendedor vende = new Vendedor();
+                            vende.lNombreVen.Text = user[x].Nombre + " " + user[x].Apellido; 
                             vende.Show();
                             this.Hide();
                         }

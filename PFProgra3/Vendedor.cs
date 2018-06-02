@@ -23,5 +23,12 @@ namespace PFProgra3
             {
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Ingreso ingre = new Ingreso();
+            ingre.Show();
+            this.Hide();
+        }
     }
 }

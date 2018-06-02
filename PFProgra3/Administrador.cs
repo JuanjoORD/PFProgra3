@@ -23,5 +23,19 @@ namespace PFProgra3
             ingre.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Inventario inve = new Inventario();
+            inve.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegistroVentas rven = new RegistroVentas();
+            rven.Show();
+            this.Hide();
+        }
     }
 }
