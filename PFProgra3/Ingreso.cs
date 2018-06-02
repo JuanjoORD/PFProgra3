@@ -40,12 +40,41 @@ namespace PFProgra3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (tNickname.Text != "" & tNickname.Text != "")
+            if (tNickname.Text != "" & tContraseña.Text != "")
             {
+                user.Clear();
                 string archivo = "usuarios.txt";
                 FileStream stream = new FileStream(archivo, FileMode.Open, FileAccess.Read);
-                StreamReader lector = new StreamReader();
-
+                StreamReader lector = new StreamReader(stream);
+                while(lector.Peek() > -1)
+                {
+                    Usuarios utemp = new Usuarios();
+                    utemp.Nombre = lector.ReadLine();
+                    utemp.Apellido = lector.ReadLine();
+                    utemp.Nickname = lector.ReadLine();
+                    utemp.Contraseña = lector.ReadLine();
+                    utemp.Tipousuario = lector.ReadLine();
+                    user.Add(utemp);
+                }
+                lector.Close();
+                for (int x = 0; x < user.Count; x++)
+                {
+                    if (user[x].Nickname == tNickname.Text & user[x].Contraseña == tContraseña.Text)
+                    {
+                        if (user[x].Tipousuario == "Administrador")
+                        {
+                            Administrador ad = new Administrador();
+                            ad.Show();
+                            this.Hide();
+                        }
+                        else if (user[x].Tipousuario == "Vendedor")
+                        {
+                            Vendedor vende = new Vendedor();
+                            vende.Show();
+                            this.Hide();
+                        }
+                    }
+                }
             }
             else
                 MessageBox.Show("Llene todas las casillas...");
