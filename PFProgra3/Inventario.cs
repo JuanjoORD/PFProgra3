@@ -110,22 +110,25 @@ namespace PFProgra3
                 }
                 if (v == 0)
                     MessageBox.Show("Producto inexistente");
-                string archivo2 = "inventario.txt";
-                FileStream stream2 = new FileStream(archivo2, FileMode.Open, FileAccess.Write);
-                StreamWriter writer = new StreamWriter(stream2);
-                for (int x = 0; x < producto.Count; x++)
+                if (v > 0)
                 {
-                    writer.WriteLine(producto[x].NombreProducto);
-                    writer.WriteLine(Convert.ToString(producto[x].PrecioProducto));
-                    writer.WriteLine((producto[x].CodigoProducto));
-                    writer.WriteLine(Convert.ToString(producto[x].PrecioProducto));
+                    string archivo2 = "inventario.txt";
+                    FileStream stream2 = new FileStream(archivo2, FileMode.Open, FileAccess.Write);
+                    StreamWriter writer = new StreamWriter(stream2);
+                    for (int x = 0; x < producto.Count; x++)
+                    {
+                        writer.WriteLine(producto[x].NombreProducto);
+                        writer.WriteLine(Convert.ToString(producto[x].PrecioProducto));
+                        writer.WriteLine((producto[x].CodigoProducto));
+                        writer.WriteLine(Convert.ToString(producto[x].CantidadProducto));
+                    }
+                    writer.Close();
+                    tNombreProducto.Text = "";
+                    tPrecio.Text = "";
+                    tCodigoProducto.Text = "";
+                    tCantidadProducto.Text = "";
+                    tNombreProducto.Focus();
                 }
-                writer.Close();
-                tNombreProducto.Text = "";
-                tPrecio.Text = "";
-                tCodigoProducto.Text = "";
-                tCantidadProducto.Text = "";
-                tNombreProducto.Focus();
             }
             else
                 MessageBox.Show("Llene los espacios necesarios");
