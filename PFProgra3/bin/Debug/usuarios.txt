@@ -8,3 +8,8 @@ Mendez
 almen
 am123
 Vendedor
+Jose
+Ordonez
+joseord
+jjot
+Administrador

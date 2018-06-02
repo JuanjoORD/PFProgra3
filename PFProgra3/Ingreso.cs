@@ -57,10 +57,12 @@ namespace PFProgra3
                     user.Add(utemp);
                 }
                 lector.Close();
+                int cont = 0;
                 for (int x = 0; x < user.Count; x++)
                 {
                     if (user[x].Nickname == tNickname.Text & user[x].Contraseña == tContraseña.Text)
                     {
+                        cont++;
                         if (user[x].Tipousuario == "Administrador")
                         {
                             Administrador ad = new Administrador();
@@ -77,6 +79,8 @@ namespace PFProgra3
                         }
                     }
                 }
+                if (cont == 0)
+                    MessageBox.Show("Usuario no registrado"+"\n"+"Puede hacerlo ahora en el botón:"+"\n"+"CREAR CUENTA");
             }
             else
                 MessageBox.Show("Llene todas las casillas...");

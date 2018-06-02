@@ -33,12 +33,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tCantidadProducto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tCodigoProducto = new System.Windows.Forms.TextBox();
+            this.tPrecio = new System.Windows.Forms.TextBox();
+            this.tNombreProducto = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -89,6 +89,7 @@
             this.button3.TabIndex = 27;
             this.button3.Text = "Modificar Producto";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -99,13 +100,14 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "Verificar Producto";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox4
+            // tCantidadProducto
             // 
-            this.textBox4.Location = new System.Drawing.Point(186, 155);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(181, 20);
-            this.textBox4.TabIndex = 25;
+            this.tCantidadProducto.Location = new System.Drawing.Point(186, 155);
+            this.tCantidadProducto.Name = "tCantidadProducto";
+            this.tCantidadProducto.Size = new System.Drawing.Size(181, 20);
+            this.tCantidadProducto.TabIndex = 25;
             // 
             // label4
             // 
@@ -127,26 +129,26 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Código del producto:";
             // 
-            // textBox3
+            // tCodigoProducto
             // 
-            this.textBox3.Location = new System.Drawing.Point(186, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 20);
-            this.textBox3.TabIndex = 22;
+            this.tCodigoProducto.Location = new System.Drawing.Point(186, 121);
+            this.tCodigoProducto.Name = "tCodigoProducto";
+            this.tCodigoProducto.Size = new System.Drawing.Size(181, 20);
+            this.tCodigoProducto.TabIndex = 22;
             // 
-            // textBox2
+            // tPrecio
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 20);
-            this.textBox2.TabIndex = 21;
+            this.tPrecio.Location = new System.Drawing.Point(186, 94);
+            this.tPrecio.Name = "tPrecio";
+            this.tPrecio.Size = new System.Drawing.Size(181, 20);
+            this.tPrecio.TabIndex = 21;
             // 
-            // textBox1
+            // tNombreProducto
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
-            this.textBox1.TabIndex = 20;
+            this.tNombreProducto.Location = new System.Drawing.Point(186, 62);
+            this.tNombreProducto.Name = "tNombreProducto";
+            this.tNombreProducto.Size = new System.Drawing.Size(181, 20);
+            this.tNombreProducto.TabIndex = 20;
             // 
             // button1
             // 
@@ -157,6 +159,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Ingresar Producto";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -212,12 +215,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tCantidadProducto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tCodigoProducto);
+            this.Controls.Add(this.tPrecio);
+            this.Controls.Add(this.tNombreProducto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -238,12 +241,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tCantidadProducto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tCodigoProducto;
+        private System.Windows.Forms.TextBox tPrecio;
+        private System.Windows.Forms.TextBox tNombreProducto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

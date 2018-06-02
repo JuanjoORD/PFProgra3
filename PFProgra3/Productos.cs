@@ -9,7 +9,7 @@ namespace PFProgra3
     class Productos
     {
         string nombreProducto;
-        float precioProducto;
+        decimal precioProducto;
         string codigoProducto;
         int cantidadProducto;
 
@@ -18,7 +18,7 @@ namespace PFProgra3
             set { this.nombreProducto = value; }
             get { return this.nombreProducto; }
         }
-        public float PrecioProducto
+        public decimal PrecioProducto
         {
             set { this.precioProducto = value; }
             get { return this.precioProducto; }
