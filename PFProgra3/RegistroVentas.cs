@@ -24,6 +24,8 @@ namespace PFProgra3
         List<DatosFac> datos2 = new List<DatosFac>();
         List<Productos> pro1 = new List<Productos>();
         List<Productos> pro2 = new List<Productos>();
+        List<DatosFac> venmes = new List<DatosFac>();
+        List<int> venmes2 = new List<int>();
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -201,6 +203,55 @@ namespace PFProgra3
             dataGridView1.Refresh();
             dataGridView1.DataSource = pro2;
             dataGridView1.Refresh();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            venpo.Clear();
+            venmes.Clear();
+            venmes2.Clear();
+            string archivo = "ventaspormes.txt";
+            FileStream stream = new FileStream(archivo, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+            while (reader.Peek() > -1)
+            {
+                VentasPor vpt = new VentasPor();
+                vpt.Codigoventa = reader.ReadLine();
+                vpt.Montoventa = reader.ReadLine();
+                vpt.Vendedor = reader.ReadLine();
+                vpt.Dia = reader.ReadLine();
+                vpt.Mes = reader.ReadLine();
+                vpt.Anio = reader.ReadLine();
+                vpt.Hora = reader.ReadLine();
+                venpo.Add(vpt);
+            }
+            reader.Close();
+            for (int i = 0; i < venpo.Count; i++)
+            {
+                int cont = 0;
+                for (int j = 0; j < venmes.Count; j++)
+                {
+                    if (venpo[i].Vendedor == venmes[j].Nombreprod)
+                    {
+                        venmes[j].Cantidadprod = Convert.ToString(Convert.ToInt16(venmes[j].Cantidadprod) + 1);
+                        cont++;
+                    }
+                }
+                if (cont == 0)
+                {
+                    DatosFac dt = new DatosFac();
+                    dt.Nombreprod = venpo[i].Vendedor;
+                    dt.Cantidadprod = "1";
+                    venmes.Add(dt);
+                }
+            }
+            for (int k = 0; k < venmes.Count; k++)
+                venmes2.Add(Convert.ToInt16(venmes[k].Cantidadprod));
+            int n = venmes2.Max();
+            for (int x = 0; x < venmes.Count; x++)
+                if (venmes[x].Cantidadprod == Convert.ToString(n))
+                    MessageBox.Show("Vendedor: "+venmes[x].Nombreprod+"\n"+"Cantidad de ventas: "+venmes[x].Cantidadprod);
+
         }
     }
 }

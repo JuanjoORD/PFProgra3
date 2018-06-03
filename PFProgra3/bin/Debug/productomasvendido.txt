@@ -1,6 +1,6 @@
 FRIJOL
-5
+13
 ARROZ
-4
+12
 LECHE
-6
+19
