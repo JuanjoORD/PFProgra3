@@ -44,14 +44,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.texProducto = new System.Windows.Forms.TextBox();
+            this.texProducCantidad = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tDirCliente = new System.Windows.Forms.TextBox();
+            this.tNombreCliente = new System.Windows.Forms.TextBox();
+            this.tNit = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +59,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.texVentaCodigo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.texEfectivo = new System.Windows.Forms.TextBox();
+            this.texVuelto = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,6 +196,7 @@
             this.button2.TabIndex = 40;
             this.button2.Text = "Ingresar Producto";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -201,6 +207,7 @@
             this.button1.TabIndex = 39;
             this.button1.Text = "Registrar cliente";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox6
             // 
@@ -209,19 +216,19 @@
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 38;
             // 
-            // textBox5
+            // texProducto
             // 
-            this.textBox5.Location = new System.Drawing.Point(130, 167);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(212, 20);
-            this.textBox5.TabIndex = 37;
+            this.texProducto.Location = new System.Drawing.Point(130, 167);
+            this.texProducto.Name = "texProducto";
+            this.texProducto.Size = new System.Drawing.Size(212, 20);
+            this.texProducto.TabIndex = 37;
             // 
-            // textBox4
+            // texProducCantidad
             // 
-            this.textBox4.Location = new System.Drawing.Point(11, 167);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 36;
+            this.texProducCantidad.Location = new System.Drawing.Point(11, 167);
+            this.texProducCantidad.Name = "texProducCantidad";
+            this.texProducCantidad.Size = new System.Drawing.Size(100, 20);
+            this.texProducCantidad.TabIndex = 36;
             // 
             // label8
             // 
@@ -253,27 +260,27 @@
             this.label6.TabIndex = 33;
             this.label6.Text = "CANTIDAD";
             // 
-            // textBox3
+            // tDirCliente
             // 
-            this.textBox3.Location = new System.Drawing.Point(116, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(278, 20);
-            this.textBox3.TabIndex = 32;
+            this.tDirCliente.Location = new System.Drawing.Point(116, 91);
+            this.tDirCliente.Name = "tDirCliente";
+            this.tDirCliente.Size = new System.Drawing.Size(278, 20);
+            this.tDirCliente.TabIndex = 32;
             // 
-            // textBox2
+            // tNombreCliente
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(278, 20);
-            this.textBox2.TabIndex = 31;
+            this.tNombreCliente.Location = new System.Drawing.Point(116, 65);
+            this.tNombreCliente.Name = "tNombreCliente";
+            this.tNombreCliente.Size = new System.Drawing.Size(278, 20);
+            this.tNombreCliente.TabIndex = 31;
             // 
-            // textBox1
+            // tNit
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(278, 20);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.tNit.Location = new System.Drawing.Point(116, 40);
+            this.tNit.Name = "tNit";
+            this.tNit.Size = new System.Drawing.Size(278, 20);
+            this.tNit.TabIndex = 30;
+            this.tNit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label5
             // 
@@ -328,7 +335,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(466, 220);
+            this.label14.Location = new System.Drawing.Point(466, 194);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 16);
             this.label14.TabIndex = 50;
@@ -338,18 +345,62 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(466, 236);
+            this.label15.Location = new System.Drawing.Point(466, 210);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(84, 16);
             this.label15.TabIndex = 51;
             this.label15.Text = "DE VENTA";
             // 
-            // textBox7
+            // texVentaCodigo
             // 
-            this.textBox7.Location = new System.Drawing.Point(466, 255);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 52;
+            this.texVentaCodigo.Location = new System.Drawing.Point(466, 229);
+            this.texVentaCodigo.Name = "texVentaCodigo";
+            this.texVentaCodigo.Size = new System.Drawing.Size(100, 20);
+            this.texVentaCodigo.TabIndex = 52;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(463, 252);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "EFECTIVO";
+            // 
+            // texEfectivo
+            // 
+            this.texEfectivo.Location = new System.Drawing.Point(466, 271);
+            this.texEfectivo.Name = "texEfectivo";
+            this.texEfectivo.Size = new System.Drawing.Size(100, 20);
+            this.texEfectivo.TabIndex = 54;
+            // 
+            // texVuelto
+            // 
+            this.texVuelto.Location = new System.Drawing.Point(467, 325);
+            this.texVuelto.Name = "texVuelto";
+            this.texVuelto.Size = new System.Drawing.Size(100, 20);
+            this.texVuelto.TabIndex = 55;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(466, 306);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(68, 16);
+            this.label16.TabIndex = 56;
+            this.label16.Text = "VUELTO";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button5.Location = new System.Drawing.Point(351, 370);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 36);
+            this.button5.TabIndex = 57;
+            this.button5.Text = "Calcular vuelto";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Vendedor
             // 
@@ -358,7 +409,12 @@
             this.BackgroundImage = global::PFProgra3.Properties.Resources.vendedor;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(569, 416);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.texVuelto);
+            this.Controls.Add(this.texEfectivo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.texVentaCodigo);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.button4);
@@ -373,14 +429,14 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.texProducto);
+            this.Controls.Add(this.texProducCantidad);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tDirCliente);
+            this.Controls.Add(this.tNombreCliente);
+            this.Controls.Add(this.tNit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -408,14 +464,14 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox texProducto;
+        private System.Windows.Forms.TextBox texProducCantidad;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tDirCliente;
+        private System.Windows.Forms.TextBox tNombreCliente;
+        private System.Windows.Forms.TextBox tNit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -426,7 +482,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox texVentaCodigo;
         public System.Windows.Forms.Label lNombreVen;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox texEfectivo;
+        private System.Windows.Forms.TextBox texVuelto;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button5;
     }
 }
