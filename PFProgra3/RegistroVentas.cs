@@ -26,6 +26,7 @@ namespace PFProgra3
         List<Productos> pro2 = new List<Productos>();
         List<DatosFac> venmes = new List<DatosFac>();
         List<int> venmes2 = new List<int>();
+        List<Factura> factu = new List<Factura>();
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -252,6 +253,62 @@ namespace PFProgra3
                 if (venmes[x].Cantidadprod == Convert.ToString(n))
                     MessageBox.Show("Vendedor: "+venmes[x].Nombreprod+"\n"+"Cantidad de ventas: "+venmes[x].Cantidadprod);
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Primero ingrese el codigo de la venta que desee ver");
+            }
+            else
+            {
+                string n = textBox1.Text;
+                string nn = ".txt";
+                string archivo = n + nn;
+                FileStream stream = new FileStream(archivo, FileMode.Open, FileAccess.Read);
+                StreamReader reader = new StreamReader(stream);
+                while (reader.Peek() > -1)
+                {
+                    Factura ft = new Factura();
+                    ft.Cantidad = reader.ReadLine();
+                    ft.Producto = reader.ReadLine();
+                    ft.Precio = reader.ReadLine();
+                    ft.Subtotal = reader.ReadLine();
+                    factu.Add(ft);
+                }
+                reader.Close();
+
+                DetallesFac otrofm = new DetallesFac();
+
+                string n2 = textBox1.Text;
+                string nn2 = "1.txt";
+                string archivo2 = n2 + nn2;
+                FileStream stream2 = new FileStream(archivo2, FileMode.Open, FileAccess.Read);
+                StreamReader reader2 = new StreamReader(stream2);
+                otrofm.lNit.Text = reader2.ReadLine();
+                otrofm.lNombre.Text = reader2.ReadLine();
+                otrofm.lDireccion.Text = reader2.ReadLine(); ;
+                otrofm.lCajero.Text = reader2.ReadLine();
+                otrofm.lCodigo.Text = reader2.ReadLine();
+                otrofm.lTotal.Text = reader2.ReadLine();
+                otrofm.lEfectivo.Text = reader2.ReadLine();
+                otrofm.lVuelto.Text = reader2.ReadLine();
+                string dia = reader2.ReadLine();
+                string mes = reader2.ReadLine();
+                string anio = reader2.ReadLine(); ;
+                otrofm.lHora.Text = reader2.ReadLine();
+                otrofm.lFecha.Text = dia + "-" + mes + "-" + anio;
+                reader2.Close();
+
+                otrofm.dataGridView1.DataSource = null;
+                otrofm.dataGridView1.Refresh();
+                otrofm.dataGridView1.DataSource = factu;
+                otrofm.dataGridView1.Refresh();
+
+                otrofm.Show();
+                this.Hide();
+            }
         }
     }
 }

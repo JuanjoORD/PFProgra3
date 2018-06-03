@@ -12,3 +12,4 @@ c:\users\hp demo\documents\visual studio 2012\Projects\PFProgra3\PFProgra3\obj\D
 c:\users\hp demo\documents\visual studio 2012\Projects\PFProgra3\PFProgra3\obj\Debug\PFProgra3.csproj.GenerateResource.Cache
 c:\users\hp demo\documents\visual studio 2012\Projects\PFProgra3\PFProgra3\obj\Debug\PFProgra3.exe
 c:\users\hp demo\documents\visual studio 2012\Projects\PFProgra3\PFProgra3\obj\Debug\PFProgra3.pdb
+C:\Users\Hp Demo\documents\visual studio 2012\Projects\PFProgra3\PFProgra3\obj\Debug\PFProgra3.DetallesFac.resources

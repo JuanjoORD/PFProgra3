@@ -8,12 +8,12 @@ namespace PFProgra3
 {
     class Factura
     {
-        decimal cantidad;
+        string cantidad;
         string producto;
-        decimal precio;
-        decimal subtotal;
+        string precio;
+        string subtotal;
 
-        public decimal Cantidad
+        public string Cantidad
         {
             set { this.cantidad = value; }
             get { return this.cantidad; }
@@ -23,12 +23,12 @@ namespace PFProgra3
             set { this.producto = value; }
             get { return this.producto; }
         }
-        public decimal Precio
+        public string Precio
         {
             set { this.precio = value; }
             get { return this.precio; }
         }
-        public decimal Subtotal
+        public string Subtotal
         {
             set { this.subtotal = value; }
             get { return this.subtotal; }

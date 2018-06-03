@@ -51,6 +51,12 @@
       <DependentUpon>Administrador.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs" />
+    <Compile Include="DetallesFac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetallesFac.Designer.cs">
+      <DependentUpon>DetallesFac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factura.cs" />
     <Compile Include="Ingreso.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,9 @@
     <Compile Include="VentasPor.cs" />
     <EmbeddedResource Include="Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetallesFac.resx">
+      <DependentUpon>DetallesFac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ingreso.resx">
       <DependentUpon>Ingreso.cs</DependentUpon>
