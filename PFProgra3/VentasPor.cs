@@ -11,6 +11,10 @@ namespace PFProgra3
         string codigoventa;
         float montoventa;
         string vendedor;
+        string dia;
+        string mes;
+        string anio;
+        string hora;
 
         public string Codigoventa
         {
@@ -26,6 +30,26 @@ namespace PFProgra3
         {
             set { this.vendedor = value; }
             get { return this.vendedor; }
-        } 
+        }
+        public string Dia
+        {
+            set { this.dia = value; }
+            get { return this.dia; }
+        }
+        public string Mes
+        {
+            set { this.mes = value; }
+            get { return this.mes; }
+        }
+        public string Anio
+        {
+            set { this.anio = value; }
+            get { return this.anio; }
+        }
+        public string Hora
+        {
+            set { this.hora = value; }
+            get { return this.hora; }
+        }
     }
 }

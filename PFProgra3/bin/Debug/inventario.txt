@@ -1,12 +1,17 @@
 LECHE
 10.5
-11lac
-78
+1lac
+88
 ARROZ
-4.5
-12ar
-70
+5
+1ar
+80
+FRIJOL
+5.5
+1fr
+130
 
 0
 
-0
+80
+

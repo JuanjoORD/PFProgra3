@@ -110,7 +110,7 @@ namespace PFProgra3
                 }
                 if (v == 0)
                     MessageBox.Show("Producto inexistente");
-                if (v > 0)
+                else if (v > 0)
                 {
                     string archivo2 = "inventario.txt";
                     FileStream stream2 = new FileStream(archivo2, FileMode.Open, FileAccess.Write);
@@ -123,6 +123,7 @@ namespace PFProgra3
                         writer.WriteLine(Convert.ToString(producto[x].CantidadProducto));
                     }
                     writer.Close();
+
                     tNombreProducto.Text = "";
                     tPrecio.Text = "";
                     tCodigoProducto.Text = "";
