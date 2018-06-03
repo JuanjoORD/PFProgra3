@@ -6,38 +6,21 @@ using System.Threading.Tasks;
 
 namespace PFProgra3
 {
-    class DatosFac:VentasPor
+    class DatosFac
     {
-        string nit;
-        string nombre;
-        string direccion;
-        string efectivo;
-        string vuelto;
+        string nombreprod;
+        string cantidadprod;
 
-        public string Nit
+        public string Nombreprod
         {
-            set { this.nit = value; }
-            get { return this.nit; }
+            set { this.nombreprod = value; }
+            get { return this.nombreprod; }
         }
-        public string Nombre
+        public string Cantidadprod
         {
-            set { this.nombre = value; }
-            get { return this.nombre; }
+            set { this.cantidadprod = value; }
+            get { return this.cantidadprod; }
         }
-        public string Direccion
-        {
-            set { this.direccion = value; }
-            get { return this.direccion; }
-        }
-        public string Efectivo
-        {
-            set { this.efectivo = value; }
-            get { return this.efectivo; }
-        }
-        public string Vuelto
-        {
-            set { this.vuelto = value; }
-            get { return this.vuelto; }
-        }
+        
     }
 }

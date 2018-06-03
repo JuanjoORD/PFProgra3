@@ -19,6 +19,7 @@ namespace PFProgra3
         }
         List<Cliente> custumer = new List<Cliente>();
         List<Productos> produc = new List<Productos>();
+        List<DatosFac> datos = new List<DatosFac>();
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -105,7 +106,7 @@ namespace PFProgra3
                 }
                 if (existe > 0)
                 {
-                    if (contador == 1)
+                    if (contador > 0)
                     {
                         FileStream stream3 = new FileStream(archi, FileMode.Open, FileAccess.Write);
                         StreamWriter writer3 = new StreamWriter(stream3);
@@ -132,16 +133,66 @@ namespace PFProgra3
                         writer.Close();
                         dataGridView1.Rows.Add(texProducCantidad.Text, texProducto.Text, precio, subto);
 
-                        string archivo4 = "productomasvendido.txt";
-                        FileStream stream4 = new FileStream(archivo4, FileMode.Append, FileAccess.Write);
-                        StreamWriter writer4 = new StreamWriter(stream4);
-                        writer4.WriteLine(texProducto.Text.ToUpper());
-                        writer4.WriteLine(texProducCantidad.Text);
-                        writer4.Close();
+
+                        datos.Clear();
+                        string archivo4 = @"C:\Users\Hp Demo\Documents\Visual Studio 2012\Projects\PFProgra3\PFProgra3\bin\Debug\productomasvendido.txt";
+                        if (File.Exists(archivo4))
+                        {
+                            datos.Clear();
+                            FileStream stream41 = new FileStream(archivo4, FileMode.Open, FileAccess.Read);
+                            StreamReader reader41 = new StreamReader(stream41);
+                            while (reader41.Peek() > -1)
+                            {
+                                DatosFac dt = new DatosFac();
+                                dt.Nombreprod = reader41.ReadLine();
+                                dt.Cantidadprod = reader41.ReadLine();
+                                datos.Add(dt);
+                            }
+                            reader41.Close();
+                            int cont = 0;
+                            for (int j = 0; j < datos.Count; j++)
+                            {
+                                if (datos[j].Nombreprod == texProducto.Text.ToUpper())
+                                {
+                                    cont++;
+                                    int cant = Convert.ToInt16(datos[j].Cantidadprod) + Convert.ToInt16(texProducCantidad.Text);
+                                    datos[j].Cantidadprod = Convert.ToString(cant);
+                                }
+                            }
+
+                            if (cont > 0)
+                            {
+                                FileStream stream5 = new FileStream(archivo4, FileMode.Open, FileAccess.Write);
+                                StreamWriter writer5 = new StreamWriter(stream5);
+                                for (int k = 0; k < datos.Count; k++)
+                                {
+                                    writer5.WriteLine(datos[k].Nombreprod);
+                                    writer5.WriteLine(datos[k].Cantidadprod);
+                                }
+                                writer5.Close();
+                            }
+                            else
+                            {
+                                FileStream stream6 = new FileStream(archivo4, FileMode.Append, FileAccess.Write);
+                                StreamWriter writer6 = new StreamWriter(stream6);
+                                writer6.WriteLine(texProducto.Text.ToUpper());
+                                writer6.WriteLine(texProducCantidad.Text);
+                                writer6.Close();
+                            }
+                        }
+                        else
+                        {
+                            FileStream stream4 = new FileStream(archivo4, FileMode.Append, FileAccess.Write);
+                            StreamWriter writer4 = new StreamWriter(stream4);
+                            writer4.WriteLine(texProducto.Text.ToUpper());
+                            writer4.WriteLine(texProducCantidad.Text);
+                            writer4.Close();
+                        }
                         totalfac = totalfac + subto;
                         ltotal.Text = Convert.ToString(totalfac);
                         texProducto.Text = "";
                         texProducCantidad.Text = "";
+                        texProducCantidad.Focus();
                     }
                     else
                         MessageBox.Show("Cantidad insuficiente");

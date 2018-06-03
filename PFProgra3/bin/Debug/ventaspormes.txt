@@ -1,21 +1,14 @@
 SM1
-105.0
+68.0
 Alex Mendez
-1
+11
 5
 2018
-11:57 p. m.
+2:29 a. m.
 SM2
-90.0
+42.5
 Alex Mendez
-1
+11
 5
 2018
-12:02 a. m.
-SM3
-110.0
-Enrique Alvarez
-6
-2
-2018
-12:52 a. m.
+2:32 a. m.

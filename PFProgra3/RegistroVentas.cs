@@ -20,6 +20,10 @@ namespace PFProgra3
         List<Usuarios> use = new List<Usuarios>();
         List<VentasPor> venpo = new List<VentasPor>();
         List<VentasPor> vendedor = new List<VentasPor>();
+        List<DatosFac> datos1 = new List<DatosFac>();
+        List<DatosFac> datos2 = new List<DatosFac>();
+        List<Productos> pro1 = new List<Productos>();
+        List<Productos> pro2 = new List<Productos>();
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -135,6 +139,67 @@ namespace PFProgra3
             dataGridView1.DataSource = null;
             dataGridView1.Refresh();
             dataGridView1.DataSource = vendedor;
+            dataGridView1.Refresh();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            datos1.Clear();
+            datos2.Clear();
+            string archivo = "productomasvendido.txt";
+            FileStream stream = new FileStream(archivo, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+            while (reader.Peek() > -1)
+            {
+                DatosFac dt = new DatosFac();
+                dt.Nombreprod = reader.ReadLine();
+                dt.Cantidadprod = reader.ReadLine();
+                datos1.Add(dt);
+            }
+            reader.Close();
+            for (int i = 0; i < datos1.Count; i++)
+                if (Convert.ToInt16(datos1[i].Cantidadprod) > 10)
+                {
+                    DatosFac dt = new DatosFac();
+                    dt.Nombreprod = datos1[i].Nombreprod;
+                    dt.Cantidadprod = datos1[i].Cantidadprod;
+                    datos2.Add(dt);
+                }
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = datos2;
+            dataGridView1.Refresh();
+           
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string archivo = "inventario.txt";
+            FileStream stream = new FileStream(archivo, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+            while (reader.Peek() > -1)
+            {
+                Productos pt = new Productos();
+                pt.NombreProducto = reader.ReadLine();
+                pt.PrecioProducto = Convert.ToDecimal(reader.ReadLine());
+                pt.CodigoProducto = reader.ReadLine();
+                pt.CantidadProducto = Convert.ToInt16(reader.ReadLine());
+                pro1.Add(pt);
+            }
+            reader.Close();
+            for(int x=0; x<pro1.Count; x++)
+                if (Convert.ToInt16(pro1[x].CantidadProducto) < 60)
+                {
+                    Productos pt = new Productos();
+                    pt.NombreProducto = pro1[x].NombreProducto;
+                    pt.PrecioProducto = pro1[x].PrecioProducto;
+                    pt.CodigoProducto = pro1[x].CodigoProducto;
+                    pt.CantidadProducto = pro1[x].CantidadProducto;
+                    pro2.Add(pt);
+                }
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = pro2;
             dataGridView1.Refresh();
         }
     }
