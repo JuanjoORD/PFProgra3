@@ -88,6 +88,7 @@
             this.button3.TabIndex = 48;
             this.button3.Text = "TERMINAR COMPRA";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView1
             // 
@@ -401,6 +402,7 @@
             this.button5.TabIndex = 57;
             this.button5.Text = "Calcular vuelto";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Vendedor
             // 

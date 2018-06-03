@@ -50,6 +50,8 @@
     <Compile Include="Administrador.Designer.cs">
       <DependentUpon>Administrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Factura.cs" />
     <Compile Include="Ingreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +86,7 @@
     <Compile Include="Vendedor.Designer.cs">
       <DependentUpon>Vendedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentasMes.cs" />
+    <Compile Include="DatosFac.cs" />
     <Compile Include="VentasPor.cs" />
     <EmbeddedResource Include="Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>

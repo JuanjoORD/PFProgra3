@@ -8,15 +8,10 @@ namespace PFProgra3
 {
     class VentasPor
     {
-        string vendedor;
         string codigoventa;
         float montoventa;
+        string vendedor;
 
-        public string Vendedor
-        {
-            set { this.vendedor = value; }
-            get { return this.vendedor; }
-        }
         public string Codigoventa
         {
             set { this.codigoventa = value; }
@@ -27,5 +22,10 @@ namespace PFProgra3
             set { this.montoventa = value; }
             get { return this.montoventa; }
         }
+        public string Vendedor
+        {
+            set { this.vendedor = value; }
+            get { return this.vendedor; }
+        } 
     }
 }
